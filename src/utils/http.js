@@ -35,7 +35,7 @@ function getAll(url) {
  * @param {String} url
  * @returns
  */
-function getById(url) {
+function get(url) {
   return fetch(url, {
     headers: getHeader()
   })
@@ -95,7 +95,7 @@ function remove(url) {
 
 export default {
   getAll,
-  getById,
+  get,
   post,
   put,
   delete: remove
