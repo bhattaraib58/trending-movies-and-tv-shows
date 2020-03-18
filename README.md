@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To Get started with project create .env file with following:
+
+```js
+REACT_APP_API_KEY=
+REACT_APP_API_URL=
+REACT_APP_IMAGE_URL=
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
