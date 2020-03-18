@@ -12,7 +12,7 @@ import config from '../../config';
  * @param {*} showObj
  * @returns
  */
-export default function SingleShowCardView({ showObj, getMovieGenre }) {
+export default function SingleShowCardView({ showObj, getGenre }) {
   const [links, setLinks] = useState({});
 
   /**
@@ -110,7 +110,7 @@ export default function SingleShowCardView({ showObj, getMovieGenre }) {
           <span className="font-12 secondary-text-color">
             {showObj.genre_ids.map((genreId, index) => (
               <React.Fragment key={genreId}>
-                {index !== 0 ? <>&nbsp;&bull;&nbsp;</> : ''} {getMovieGenre(genreId)}
+                {index !== 0 ? <>&nbsp;&bull;&nbsp;</> : ''} {getGenre(genreId)}
               </React.Fragment>
             ))}
           </span>
@@ -139,6 +139,6 @@ export default function SingleShowCardView({ showObj, getMovieGenre }) {
 }
 
 SingleShowCardView.propTypes = {
-  getMovieGenre: PropTypes.any,
+  getGenre: PropTypes.func,
   showObj: PropTypes.any
 };

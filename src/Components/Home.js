@@ -14,6 +14,7 @@ export default function Home() {
 
   const [trendingMovies, setTrendingMovies] = useState();
   const [trendingTV, setTrendingTV] = useState();
+  const [tvGenres, setTVGenres] = useState();
   const [movieGenres, setMovieGenres] = useState();
 
   /**
@@ -29,6 +30,18 @@ export default function Home() {
   };
 
   /**
+   * Find Movie Genre from Available List.
+   *
+   * @param {*} genreId
+   * @returns
+   */
+  const getTVGenre = genreId => {
+    const genre = tvGenres.find(genre => genre.id === genreId);
+
+    return genre ? genre.name : '';
+  };
+
+  /**
    * Fetch Trending Movies, TV and Genre.
    *
    */
@@ -36,11 +49,13 @@ export default function Home() {
     setLoading(true);
 
     const { genres: movieGenres } = await http.getAll(config.baseApiURI + config.endpoints.movieGenre);
+    const { genres: tvGenres } = await http.getAll(config.baseApiURI + config.endpoints.tvGenre);
     const { results: trendingTV } = await http.getAll(config.baseApiURI + config.endpoints.trendingTV);
     const { results: trendingMovies } = await http.getAll(config.baseApiURI + config.endpoints.trendingMovie);
 
     setTrendingTV(trendingTV);
     setMovieGenres(movieGenres);
+    setTVGenres(tvGenres);
     setTrendingMovies(trendingMovies);
     setLoading(false);
   };
@@ -57,7 +72,7 @@ export default function Home() {
         <h2 className="primary-text-color">Trending TV Shows</h2>
         <div>
           {trendingTV.map(shows => (
-            <SingleShowCardView showObj={shows} key={shows.id} getMovieGenre={getMovieGenre} />
+            <SingleShowCardView showObj={shows} key={shows.id} getGenre={getTVGenre} />
           ))}
         </div>
       </div>
@@ -66,7 +81,7 @@ export default function Home() {
         <h2 className="primary-text-color">Trending Movies</h2>
         <div>
           {trendingMovies.map(shows => (
-            <SingleShowCardView showObj={shows} key={shows.id} getMovieGenre={getMovieGenre} />
+            <SingleShowCardView showObj={shows} key={shows.id} getGenre={getMovieGenre} />
           ))}
         </div>
       </div>

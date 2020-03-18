@@ -13,7 +13,8 @@ const config = {
     trending: '/trending',
     trendingMovie: '/trending/movie/day',
     trendingTV: '/trending/tv/day',
-    movieGenre: '/genre/movie/list'
+    movieGenre: '/genre/movie/list',
+    tvGenre: '/genre/tv/list'
   }
 };
 
