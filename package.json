@@ -2,14 +2,6 @@
   "name": "trending-movies-and-tv-shows",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,11 +11,23 @@
     "eslint:fix": "eslint --fix src",
     "lint": "yarn prettier && yarn eslint",
     "lint:fix": "yarn prettier:fix && yarn eslint:fix",
-    "prettier": "prettier \"{src,api}/**/*.js\" \"{src,api}/**/*.css\"",
-    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.css\""
+    "prettier": "prettier --list-different \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn",
+    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.2",
+    "@testing-library/user-event": "^12.1.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-leapfrog": "^3.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.1"
   },
   "browserslist": {
     "production": [
@@ -36,12 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-leapfrog": "^2.0.1",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
   }
 }
