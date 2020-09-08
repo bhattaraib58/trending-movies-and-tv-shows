@@ -16,7 +16,7 @@ export function getImageUrl(imagePath) {
  * @param {*} imdbId
  * @returns
  */
-export const getImdbLink = imdbId => {
+export const getImdbLink = (imdbId) => {
   return imdbId && `https://www.imdb.com/title/${imdbId}`;
 };
 
@@ -26,6 +26,6 @@ export const getImdbLink = imdbId => {
  * @param {*} videoID
  * @returns
  */
-export const getYoutubeLink = videoID => {
+export const getYoutubeLink = (videoID) => {
   return videoID && `https://www.youtube.com/watch?v=${videoID}`;
 };

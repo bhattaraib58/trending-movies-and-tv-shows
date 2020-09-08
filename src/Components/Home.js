@@ -23,8 +23,8 @@ export default function Home() {
    * @param {*} genreId
    * @returns
    */
-  const getMovieGenre = genreId => {
-    const genre = movieGenres.find(genre => genre.id === genreId);
+  const getMovieGenre = (genreId) => {
+    const genre = movieGenres.find((genre) => genre.id === genreId);
 
     return genre ? genre.name : '';
   };
@@ -35,8 +35,8 @@ export default function Home() {
    * @param {*} genreId
    * @returns
    */
-  const getTVGenre = genreId => {
-    const genre = tvGenres.find(genre => genre.id === genreId);
+  const getTVGenre = (genreId) => {
+    const genre = tvGenres.find((genre) => genre.id === genreId);
 
     return genre ? genre.name : '';
   };
@@ -71,7 +71,7 @@ export default function Home() {
       <div className="momr-20">
         <h2 className="primary-text-color">Trending TV Shows</h2>
         <div>
-          {trendingTV.map(shows => (
+          {trendingTV.map((shows) => (
             <SingleShowCardView showObj={shows} key={shows.id} getGenre={getTVGenre} />
           ))}
         </div>
@@ -80,7 +80,7 @@ export default function Home() {
       <div>
         <h2 className="primary-text-color">Trending Movies</h2>
         <div>
-          {trendingMovies.map(shows => (
+          {trendingMovies.map((shows) => (
             <SingleShowCardView showObj={shows} key={shows.id} getGenre={getMovieGenre} />
           ))}
         </div>

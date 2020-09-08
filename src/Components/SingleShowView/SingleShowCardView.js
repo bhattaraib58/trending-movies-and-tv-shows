@@ -38,8 +38,8 @@ export default function SingleShowCardView({ showObj, getGenre }) {
    * @param {Object[]} videosObj
    * @returns {String | null}
    */
-  const findAndGetYoutubeLink = videosObj => {
-    const videoDetail = videosObj.find(video => video.site === 'YouTube' && video.type === 'Trailer');
+  const findAndGetYoutubeLink = (videosObj) => {
+    const videoDetail = videosObj.find((video) => video.site === 'YouTube' && video.type === 'Trailer');
 
     return videoDetail && getYoutubeLink(videoDetail.key);
   };

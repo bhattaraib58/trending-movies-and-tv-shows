@@ -25,8 +25,8 @@ function getAll(url) {
   return fetch(url, {
     headers: getHeader()
   })
-    .then(response => response.json())
-    .then(data => data);
+    .then((response) => response.json())
+    .then((data) => data);
 }
 
 /**
@@ -39,8 +39,8 @@ function get(url) {
   return fetch(url, {
     headers: getHeader()
   })
-    .then(response => response.json())
-    .then(data => data);
+    .then((response) => response.json())
+    .then((data) => data);
 }
 
 /**
@@ -59,7 +59,7 @@ function post(url, data) {
 }
 
 /**
- * Update data in url
+ * Update data in url.
  *
  * @param {*} url
  * @param {*} data
