@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npx serve -s build",
+    "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -11,8 +12,8 @@
     "eslint:fix": "eslint --fix src",
     "lint": "yarn prettier && yarn eslint",
     "lint:fix": "yarn prettier:fix && yarn eslint:fix",
-    "prettier": "prettier --list-different \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn",
-    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api}/**/*.{md,yml,yml,json,css}\" --loglevel warn"
+    "prettier": "prettier --list-different \"{src,api}/**/*.js\" \"{src,api,public}/**/*.{html,css,md,yml,yml,json}\" --loglevel warn",
+    "prettier:fix": "prettier --write \"{src,api}/**/*.js\" \"{src,api,public}/**/*.{html,css,md,yml,yml,json}\" --loglevel warn"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
