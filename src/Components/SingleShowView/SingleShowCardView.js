@@ -83,6 +83,7 @@ export default function SingleShowCardView({ showObj, getGenre }) {
 
   useEffect(() => {
     fetchIMDBExternalDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
